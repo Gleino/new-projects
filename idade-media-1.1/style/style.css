@@ -196,9 +196,10 @@ footer {
     background-color: var(--cor-cont);
     color: var(--cor-ama);
     text-align: center;
+    text-transform: uppercase;
     padding: 2rem;
     margin-top: var(--spacing);
-    font-family: var(--font-text);
+    font-family: var(--font-tittle);
 }
 
 /* Efeitos de animação para elementos da página */
@@ -233,5 +234,54 @@ main p {
     
     main p {
         font-size: 1.2em;
+    }
+}
+    /* Estilo para o botão de menu */
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: var(--cor-ama);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color var(--transition) ease;
+}
+
+.menu-toggle:hover {
+    color: var(--cor-white);
+}
+
+.menu-toggle.active {
+    color: var(--cor-white);
+}
+
+/* Media query para design responsivo */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-links a {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        width: 100%;
     }
 }
