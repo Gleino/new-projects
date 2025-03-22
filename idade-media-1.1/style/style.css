@@ -1,0 +1,237 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=MedievalSharp&display=swap');
+
+:root {
+    --font-text: 'Marcellus', serif;
+    --font-tittle: 'MedievalSharp', serif;
+    --cor-clara: #A8844A;
+    --cor-forte: #75654B;
+    --cor-ama: #DB9B34;
+    --cor-cont: #38332B;
+    --cor-cont-h2: rgba(56, 51, 43, 0.8);
+    --cor-basic: #F5F0E6;
+    --cor-white: white;
+    --transition: 0.3s;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    --spacing: 4vh;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-basic);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--cor-cont);
+    color: var(--cor-ama);
+    font-family: var(--font-tittle);
+    font-variant: small-caps;
+    font-size: 8vw;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+
+nav {
+    background-color: var(--cor-cont);
+    width: max-content;
+    padding: 2vh;
+    font-family: var(--font-tittle);
+    font-size: 2vh;
+    font-variant: small-caps;
+    border-radius: 0px 0px 10px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--box-shadow);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-ama);
+    margin-right: 1.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: all var(--transition) ease;
+}
+
+nav a:hover {
+    color: var(--cor-white);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+main {
+    font-family: var(--font-text);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+main h1 {
+    font-family: var(--font-tittle);
+    font-variant: small-caps;
+    padding-top: 4vh;
+    text-indent: 20px;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    color: var(--cor-cont);
+    position: relative;
+    margin-bottom: 2vh;
+}
+
+main h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: var(--cor-ama);
+    margin-top: 1vh;
+    border-radius: 2px;
+}
+
+main h2 {
+    font-family: var(--font-tittle);
+    font-variant: small-caps;
+    font-size: 5vw;
+    background-color: var(--cor-cont-h2);
+    color: var(--cor-white);
+    display: inline-block;
+    padding: 5px 15px;
+    text-indent: 15px;
+    border-radius: 0px 5px 8px 0px;
+    box-shadow: var(--box-shadow);
+}
+
+main p {
+    max-width: 1000px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    font-size: 1.4em;
+    text-align: justify;
+    text-indent: 15px;
+    font-variant: small-caps;
+    padding-bottom: 2vh;
+    line-height: 1.8;
+}
+
+section.img {
+    height: 40vh;
+    min-height: 300px;
+    background-color: black;
+    color: var(--cor-ama);
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+section.img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+section.img h2 {
+    position: relative;
+    z-index: 2;
+    margin-left: 1rem;
+    transition: transform var(--transition) ease;
+}
+
+section.img:hover h2 {
+    transform: translateX(10px);
+}
+
+section#roma {
+    background-image: url(../img/queda-imp.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section#rbarb {
+    background-image: url(../img/rbarb.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section#bizan {
+    background-image: url(../img/bizan.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section#arab {
+    background-image: url(../img/arab.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+footer {
+    background-color: var(--cor-cont);
+    color: var(--cor-ama);
+    text-align: center;
+    padding: 2rem;
+    margin-top: var(--spacing);
+    font-family: var(--font-text);
+}
+
+/* Efeitos de animação para elementos da página */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+main h1, main p {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+main p {
+    animation-delay: 0.2s;
+}
+
+/* Media queries para design responsivo */
+@media (max-width: 768px) {
+    nav {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    nav a {
+        margin-bottom: 0.5rem;
+    }
+    
+    main {
+        padding: 0 1rem;
+    }
+    
+    main p {
+        font-size: 1.2em;
+    }
+}
