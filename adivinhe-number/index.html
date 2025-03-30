@@ -1,16 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adivinhe o numero</title>
+    <link rel="stylesheet" href="../../curso-javascript/style.css">
+    <style>
+        div#gameArea {
+            background-color: brown;
+            height: 180px;
+            width: 400px;
+            margin: auto;
+            margin-top: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px 12px;
+        }
+        div#ress {
+            text-align: center;
+            margin-top: 10px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20vh;
+        }
+    </style>
 </head>
 <body>
     <section>
+        <h1>Adivinhe o numero de 0 á 20 em 5 tentativas</h1>
         <div id="gameArea">
-            <input type="number" name="userNum" id="userNum">
-            <input type="button" value="Sortear">
+            <label for="userNum">Digite um número: </label>
+            <input type="number" name="userNum" id="userNum" min="1" max="20" required>
+            <input type="button" value="Go!" onclick="ger()">
         </div>
+        <div id="ress">Você tem 5 tentativas</div>
     </section>
+    <script>
+        let userNum = document.getElementById('userNum');
+        let ress = document.getElementById('ress');
+        let numAleat = Math.floor(Math.random() * 20) + 1; // aleatorio entre 1 e 20
+        let turno = 0;
+        
+        function ger() {
+            let numero = Number(userNum.value);
+            
+            if (!numero || numero < 1 || numero > 20) {
+                alert("Digite um número entre 1 e 20");
+                return;
+            }
+            
+            turno++;
+            
+            // Estilização comum
+            ress.style.background = 'darkgrey';
+            ress.style.width = '250px';
+            ress.style.textAlign = 'center';
+            ress.style.margin = 'auto';
+            ress.style.marginTop = '10px';
+            ress.style.borderRadius = '4px 10px';
+            
+            if (numero < numAleat) {
+                ress.innerHTML = `Errou, tente um numero MAIOR, você esta no ${turno}° turno!`;
+            }
+
+            if (numero > numAleat) {
+                ress.innerHTML = `Errou, tente um numero MENOR, você esta no ${turno}° turno!`;
+            }
+
+            if (numero == numAleat) {
+                ress.innerHTML = `Acertou!`;
+                ress.style.background = 'green';
+                // Resetar em alguns segs
+                setTimeout(reset, 2000);
+                return;
+            }
+            
+            // Verificar se atingiu o limite
+            if (turno >= 5) {
+                setTimeout(function() {
+                    ress.innerHTML = `Game Over! O número era ${numAleat}`;
+                    ress.style.background = 'red';
+                    setTimeout(reset, 2000);
+                }, 1000);
+            }
+        }
+        
+        function reset() {
+            numAleat = Math.floor(Math.random() * 20) + 1; // Gerar novo número aleatório entre 1 e 20
+            turno = 0;
+            userNum.value = ""; // reset input
+            ress.innerHTML = `Novo jogo! Você tem ${turno} turnos`;
+            ress.style.background = 'lightgrey';
+        }
+    </script>
 </body>
 </html>
