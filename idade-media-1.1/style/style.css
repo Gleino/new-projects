@@ -111,6 +111,25 @@ main h2 {
     text-indent: 15px;
 }
 
+main h3 {
+    font-family: var(--font-tittle);
+    font-variant: small-caps;
+    font-size: 2vw;
+    color: var(--cor-cont);
+    padding: 5px 15px;
+    text-indent: 15px;
+}
+
+#intro {
+    font-family: var(--font-tittle);
+    font-variant: small-caps;
+    font-size: 1em;
+    color: var(--cor-cont);
+    display: inline-block;
+    padding: 5px 15px;
+    text-indent: 15px;
+}
+
 main p {
     max-width: 1000px;
     padding-left: 10px;
