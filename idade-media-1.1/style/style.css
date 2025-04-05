@@ -189,6 +189,34 @@ section#arab {
     background-attachment: fixed;
 }
 
+section#igreja {
+    background-image: url(../img/igrej-monarquismo.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section#carolingia {
+    background-image: url(../img/europa-calorigia.webp);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section#renascimento {
+    background-image: url(../img/renascimento.jpg);
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section#desagregacao {
+    background-image: url(../img/noticiasconcursos.com.br-quem-foi-carlos-magno-carlos-magno.webp);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 footer {
     background-color: var(--cor-cont);
     color: var(--cor-ama);
