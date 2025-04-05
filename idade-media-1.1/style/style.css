@@ -144,7 +144,7 @@ main p {
 }
 
 section.img {
-    height: 40vh;
+    width: 100%;
     min-height: 300px;
     background-color: black;
     color: var(--cor-ama);
@@ -236,14 +236,73 @@ section#desagregacao {
     background-attachment: fixed;
 }
 
+/* Estilos para o footer */
 footer {
+    font-family: var(--font-text);
+    font-variant: small-caps;
     background-color: var(--cor-cont);
-    color: var(--cor-ama);
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    border-bottom: 2px solid #666;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
     text-align: center;
-    text-transform: uppercase;
-    padding: 2rem;
-    margin-top: var(--spacing);
-    font-family: var(--font-tittle);
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #555;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-bottom: 20px;
+    }
 }
 
 /* Efeitos de animação para elementos da página */
