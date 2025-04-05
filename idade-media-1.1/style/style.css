@@ -44,20 +44,6 @@ header {
     position: relative;
 }
 
-/* Estilos para o menu e animações */
-.nav-links {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .menu-hidden {
-    opacity: 0 !important;
-    transform: translateY(-10px) !important;
-    pointer-events: none;
-    visibility: hidden;
-  }
-
 nav {
     background-color: var(--cor-cont);
     width: max-content;
@@ -86,55 +72,6 @@ nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
-/* Adicione este trecho ao seu arquivo style.css */
-
-/* Estilo para o botão de menu - sempre visível */
-.menu-toggle {
-    display: block !important; /* Força a exibição do botão em qualquer tamanho de tela */
-    background-color: transparent;
-    border: none;
-    color: var(--cor-ama);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: color var(--transition) ease;
-}
-
-.menu-toggle:hover {
-    color: var(--cor-white);
-}
-
-.menu-toggle.active {
-    color: var(--cor-white);
-}
-
-/* Esconde os links de navegação por padrão */
-.nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 1;
-    transform: translateY(0);
-    width: 100%;
-    margin-top: 1rem;
-}
-
-.nav-links.menu-hidden {
-    opacity: 0 !important;
-    transform: translateY(-10px) !important;
-    pointer-events: none;
-    visibility: hidden;
-}
-
-.nav-links a {
-    margin-right: 0;
-    margin-bottom: 0.5rem;
-    width: 100%;
-}
-
-/* Remova a media query que controla a exibição do botão de menu 
-   (se existir no seu CSS original) */
 
 main {
     font-family: var(--font-text);
@@ -368,7 +305,7 @@ footer {
     }
 }
 
-/* Efeitos de animação para elementos da página fadeIn */
+/* Efeitos de animação para elementos da página */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
