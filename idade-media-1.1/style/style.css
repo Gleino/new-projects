@@ -16,9 +16,10 @@
     --spacing: 4vh;
 }
 
+/* Reset e configurações básicas */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -31,6 +32,12 @@ body {
     line-height: 1.6;
 }
 
+/* Textos e tipografia comum */
+.small-caps {
+    font-variant: small-caps;
+}
+
+/* Header */
 header {
     background-image: url(../img/BARB.png);
     background-position: center center;
@@ -40,12 +47,12 @@ header {
     font-variant: small-caps;
     font-size: 8vw;
     text-align: center;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding: 2vh 0;
     box-shadow: var(--box-shadow);
     position: relative;
 }
 
+/* Navigation */
 nav {
     background-color: var(--cor-cont);
     width: max-content;
@@ -53,7 +60,7 @@ nav {
     font-family: var(--font-tittle);
     font-size: 2vh;
     font-variant: small-caps;
-    border-radius: 0px 0px 10px 0px;
+    border-radius: 0 0 10px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -75,6 +82,22 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: var(--cor-ama);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color var(--transition) ease;
+}
+
+.menu-toggle:hover, .menu-toggle.active {
+    color: var(--cor-white);
+}
+
+/* Main content */
 main {
     font-family: var(--font-text);
     max-width: 1200px;
@@ -82,6 +105,7 @@ main {
     padding: 0 2rem;
 }
 
+/* Headings */
 main h1 {
     font-family: var(--font-tittle);
     font-variant: small-caps;
@@ -132,32 +156,33 @@ main h3 {
     text-indent: 15px;
 }
 
+/* Paragraphs */
 main p {
     max-width: 1000px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px 2vh;
     margin: auto;
     font-size: 1.4em;
     text-align: justify;
     text-indent: 15px;
     font-variant: small-caps;
-    padding-bottom: 2vh;
     line-height: 1.8;
 }
 
+/* Background sections */
 section.img {
     width: 100%;
     min-height: 300px;
     background-color: black;
     color: var(--cor-ama);
-    padding-top: 4vh;
-    padding-bottom: 4vh;
-    margin-top: var(--spacing);
-    margin-bottom: var(--spacing);
+    padding: 4vh 0;
+    margin: var(--spacing) 0;
     position: relative;
     display: flex;
     align-items: center;
     box-shadow: var(--box-shadow);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 section.img::before {
@@ -182,63 +207,17 @@ section.img:hover h2 {
     transform: translateX(10px);
 }
 
-section#roma {
-    background-image: url(../img/queda-imp.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-}
+/* Individual section backgrounds */
+section#roma { background-image: url(../img/queda-imp.jpg); }
+section#rbarb { background-image: url(../img/rbarb.jpg); }
+section#bizan { background-image: url(../img/bizan.jpg); }
+section#arab { background-image: url(../img/arab.jpeg); }
+section#igreja { background-image: url(../img/igrej-monarquismo.jpeg); }
+section#carolingia { background-image: url(../img/europa-calorigia.jpeg); }
+section#renascimento { background-image: url(../img/renascimento.jpg); }
+section#desagregacao { background-image: url(../img/freepik.jpeg); }
 
-section#rbarb {
-    background-image: url(../img/rbarb.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-section#bizan {
-    background-image: url(../img/bizan.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-section#arab {
-    background-image: url(../img/arab.jpeg);
-    background-position: top center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-section#igreja {
-    background-image: url(../img/igrej-monarquismo.jpeg);
-    background-position: top center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-section#carolingia {
-    background-image: url(../img/europa-calorigia.jpeg);
-    background-position: top center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-section#renascimento {
-    background-image: url(../img/renascimento.jpg);
-    background-position: top center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-section#desagregacao {
-    background-image: url(../img/freepik.jpeg);
-    background-position: top center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-/* Estilos para o footer */
+/* Footer */
 footer {
     font-family: var(--font-text);
     font-variant: small-caps;
@@ -296,18 +275,7 @@ footer {
     border-top: 1px solid #555;
 }
 
-/* Responsividade */
-@media screen and (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-    }
-    
-    .footer-section {
-        margin-bottom: 20px;
-    }
-}
-
-/* Efeitos de animação para elementos da página */
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -321,18 +289,8 @@ main p {
     animation-delay: 0.2s;
 }
 
-/* Media queries para design responsivo */
+/* Media queries */
 @media (max-width: 768px) {
-    nav {
-        width: auto;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    nav a {
-        margin-bottom: 0.5rem;
-    }
-    
     main {
         padding: 0 1rem;
     }
@@ -340,29 +298,15 @@ main p {
     main p {
         font-size: 1.2em;
     }
-}
-    /* Estilo para o botão de menu */
-.menu-toggle {
-    display: none;
-    background-color: transparent;
-    border: none;
-    color: var(--cor-ama);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: color var(--transition) ease;
-}
-
-.menu-toggle:hover {
-    color: var(--cor-white);
-}
-
-.menu-toggle.active {
-    color: var(--cor-white);
-}
-
-/* Media query para design responsivo */
-@media (max-width: 768px) {
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-bottom: 20px;
+    }
+    
     .menu-toggle {
         display: block;
     }
@@ -371,6 +315,7 @@ main p {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        width: auto;
     }
     
     .nav-links {
