@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
         <p>A HISTÓRIA</p>
     </header>
     <nav>
-        <a href="home.html" title="Página Inicial">HOME</a>
-        <a href="resumo.html" title="Resumo da história">RESUMO</a>
-        <a href="timeline.html" title="Linha do Tempo">TIMELINE</a>
-        <a href="#personagens" title="Personagens Importantes">PERSONAGENS</a>
-        <a href="#reinos" title="Reinos Medievais">REINOS</a>
-        <a href="#cultura" title="Cultura Medieval">CULTURA</a>
+        <a href="index.html" title="Página Inicial">PAGINA INICIAL</a>
+        <a href="resumo.html" title="Resumo da história">RESUMO DO PERIODO PÓS-ROMANO</a>
+        <a href="timeline.html" title="Linha do Tempo">LINHA DO TEMPO</a>
+        <a href="personagens.html" title="Personagens Importantes">PERSONAGENS IMPORTANTES</a>
+        <a href="reinos.html" title="Reinos Medievais">REINOS APOS A QUEDA DE ROMA</a>
+        <a href="culturas.html" title="Classes culturais">CLASSES CULTURAIS</a>
         <a href="#contato" title="Entre em Contato">CONTATO</a>
     </nav>
     `;
